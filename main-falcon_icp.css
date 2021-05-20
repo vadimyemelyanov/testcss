@@ -1,0 +1,1299 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css');
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #D7EFFC;
+    background: linear-gradient(180deg, #D7F0FC 0%, #D7EFFC 100%);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.hidden {
+    display: none !important
+}
+
+.container {
+    display: flex;
+    min-width: 320px !important;
+    max-width: 990px !important;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+    margin-bottom: 37px;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    min-height: 60px;
+    padding-top: 12px;
+}
+
+.footer img {
+    margin-right: 20px;
+}
+
+.layout-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.layout-container-footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+#shopLogo {
+    text-align: right;
+    width: 100%;
+}
+
+.shopLogo img,
+.shopLogo svg {
+    max-height: 64px !important;
+    max-width: 320px !important;
+}
+
+.form-control,
+.form-control-static {
+    font-weight: bold;
+}
+
+.ccLogos {
+    padding-left: 8px;
+}
+
+#shopTitle {
+    font-size: larger;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    z-index: 99999;
+}
+
+/* progress */
+.progress-container {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 340px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-container img,
+.progress-container div,
+.progress-container .btn {
+    margin-top: 40px;
+}
+
+#refresherBlock {
+    margin: auto;
+}
+
+.payment-form-container {
+    width: 100%;
+    max-width: 480px !important;
+    min-width: 320px !important;
+    margin-bottom: 52px;
+}
+
+.img-responsive {
+    display: inline-block;
+}
+
+.text-amount {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text-balance {
+    color: #556575;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-top: 5px;
+}
+
+.available-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.available-cards:hover {
+    cursor: pointer;
+}
+
+.available-card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    height: 66px;
+    border-radius: 4px;
+}
+
+.billing-address {
+    margin-top: 31px;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.card-number-input {
+    height: 60px;
+    font-size: 16px;
+}
+
+.selected-card-cvv {
+    padding-left: 6px !important;
+}
+
+.custom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+}
+
+.PCI {
+    width: 142px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.saveTemplate,
+.custom-radio {
+    opacity: 0;
+    position: absolute;
+}
+
+.saveTemplate:not(:checked) + .checkbox-label,
+.saveTemplate:checked + .checkbox-label {
+    position: relative;
+    padding-left: 2.5em;
+    padding-top: 0.3em;
+    cursor: pointer;
+}
+
+.saveTemplate:not(:checked) + .checkbox-label:before,
+.saveTemplate:checked + .checkbox-label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+}
+
+.saveTemplate:not(:checked) + .checkbox-label:after,
+.saveTemplate:checked + .checkbox-label:after {
+    content: url(/payment/img/check-icon-cashir.svg);
+    position: absolute;
+    left: 0.34em;
+    top: 0.09em;
+    font-size: 1.3em;
+    line-height: 0.8;
+    transition: all .2s;
+}
+
+.saveTemplate:not(:checked) + .checkbox-label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.saveTemplate:checked + .checkbox-label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.checkbox-label {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.07;
+}
+
+.selectCountry {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: "";
+}
+
+.custom-radio + label {
+    width: 100%;
+}
+
+.custom-radio + label:hover {
+    cursor: pointer;
+}
+
+.card-brand-img {
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 29px;
+}
+
+.two-lines-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.card-text {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+}
+
+.card-text span {
+    letter-spacing: 2.5px;
+    opacity: 0.8;
+}
+
+.masked-pan {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mask {
+    margin-top: 6px;
+}
+
+.collapsible-content {
+    width: 100%;
+    display: none;
+    overflow: hidden;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.toggle:checked + label + .collapsible-content {
+    display: block;
+    max-height: 1000px;
+    overflow: visible;
+}
+
+#remove-card:hover {
+    cursor: pointer;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mt-26 {
+    margin-top: 26px;
+}
+
+.ml-21 {
+    margin-left: 21px;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.mobile-hide {
+    margin-left: 20px;
+}
+
+.mb-56 {
+    margin-bottom: 56px;
+}
+
+.mb-37 {
+    margin-bottom: 37px;
+}
+
+.padding-h-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.padding-h-5 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.padding-l-5 {
+    padding-left: 5px;
+}
+
+.padding-r-5 {
+    padding-right: 5px;
+}
+
+.pay-btn-padding {
+    padding-left: 5px;
+}
+
+.cancel-btn-padding {
+    padding-right: 5px;
+}
+
+.cancel-wrapper {
+    margin-top: 10px;
+}
+
+.available-card-label {
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.text-pan {
+    text-align: center !important;
+}
+
+#statusIcon {
+    padding-left: 35px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.text-status {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.status-description {
+    color: #556575;
+    font-size: 18px;
+    line-height: 1.35em;
+    text-align: center;
+    margin-bottom: 95px;
+}
+
+.blockchain-warning-message {
+    color: #dc0a0a;
+}
+
+.status-btn-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.single-btn-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-btn-wrapper {
+    width: 230px;
+}
+
+.text-align-left {
+    text-align: left !important;
+}
+
+.prepare-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.middle-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 420px;
+    box-sizing: border-box;
+}
+
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 154px;
+}
+
+.logo-wrapper img {
+    width: 80%;
+    height: auto;
+}
+
+.logo-wrapper img {
+    width: 80%;
+    height: auto;
+}
+
+.submit-button {
+    width: 60%;
+    height: 51px;
+    left: 40.35%;
+    right: 40.39%;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.dropdown-selection {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.option-selector {
+    width: 100%;
+    height: 29px;
+    left: 563px;
+    text-align-last: center;
+    padding-right: 29px;
+    direction: ltr;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url(/static/payment/img/arrow.png) no-repeat;
+    background-position: right 8px top 11px;
+    text-indent: 0.01px;
+    text-overflow: "";
+}
+
+.select-label {
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.option-selector option {
+    text-align: center;
+    text-align-last: center;
+}
+
+.shop-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+}
+
+.shop-title {
+    width: 50%;
+    font-weight: bold;
+    font-size: 28px !important;
+    text-align: center;
+}
+
+fieldset {
+    width: 100%;
+}
+
+.pp-card {
+    background-color: #fff;
+    background-origin: content-box;
+    background-position: 10px 19px;
+    border-radius: 20px;
+    margin-top: 0;
+    padding-bottom: 40px;
+}
+
+.text-shop-title {
+    display: none;;
+}
+
+.pp-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pp-card-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.pp-card-body {
+    padding-top: 16px;
+    margin: 0 15px;
+}
+
+.pp-card-order-details {
+    margin-top: 20px;
+}
+
+.add-new-card {
+    width: 100%;
+    height: 66px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 90px;
+}
+
+.add-new-card svg {
+    position: absolute;
+    left: 65px;
+}
+
+.pp-card-body-new {
+    margin-top: -25px;
+    padding-left: 29px;
+    padding-right: 29px;
+}
+
+.add-new-card:hover {
+    cursor: pointer;
+}
+
+.pay-btn {
+    border: none;
+    background: transparent;
+    background-color: #78BA5C;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 #BFCABB;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 14px 35px;
+    margin: 0 auto;
+    outline: none;
+    user-select: none;
+    transition: all 0.2s ease;
+    width: calc(100% - 60px);
+}
+
+.pay-btn:hover {
+    background-color: #3EA042;
+    box-shadow: 0 0 0 0 #BFCABB;
+}
+
+.pay-btn > svg {
+    display: none;
+}
+
+.pay-btn > p {
+    text-align: center;
+}
+
+.pay-btn:active {
+    border-style: none;
+}
+
+.selected-card-cvv {
+    width: 102px;
+    height: 100%;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.selected-card-cvv-input {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.9px;
+}
+
+.selected-card-cvv-input:focus {
+    outline: none;
+}
+
+.selected-card-cvv-input::placeholder {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.9px;
+}
+
+.back-arrow-wrapper {
+    color: #556575;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.back-arrow-wrapper div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-arrow {
+    display: none;
+}
+
+.input-large,
+.input-half {
+    background-color: #EBFBFF;
+    border-radius: 8px;
+    border: none;
+    color: #556575;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.input-large:focus,
+.input-half:focus {
+    border-color: none;
+    color: #556575;
+    outline: none;
+}
+
+.input-half::placeholder,
+.input-large::placeholder {
+    color: #556575;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.input-card,
+.input-billing {
+    box-shadow: 0 2px 4px 0 #DEF0FA;
+    color: #556575;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    height: 48px;
+}
+
+.input-card {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-left: 50px;
+}
+
+.input-billing {
+    padding-left: 15px;
+}
+
+.number {
+    background-image: url(/static/payment/img/card.svg);
+    background-position: 14px 18px;
+    background-repeat: no-repeat;
+}
+
+.holder {
+    background-image: url(/static/payment/img/holder.svg);
+    background-position: 17px 16px;
+    background-repeat: no-repeat;
+}
+
+.expiry {
+    background-image: url(/static/payment/img/date.svg);
+    background-position: 17px 16px;
+    background-repeat: no-repeat;
+}
+
+.cvv {
+    background-image: url(/static/payment/img/secure.svg);
+    background-position: 17px 16px;
+    background-repeat: no-repeat;
+}
+
+.cards-brands-img {
+    margin-bottom: 18px;
+    width: 95%;
+}
+
+.padding-b-37 {
+    padding-bottom: 37px;
+}
+
+.save-template-left {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 0;
+}
+
+.save-template-right {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0;
+}
+
+.left-field {
+    padding-right: 4px;
+}
+
+.right-field {
+    padding-left: 4px;
+}
+
+.remove-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 106px;
+}
+
+.card-status {
+    height: 100%;
+}
+
+.card-header-status {
+    margin-bottom: 20px;
+}
+
+#backToShopBtn:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+#next-btn:hover {
+    cursor: pointer;
+}
+
+.error-field {
+    border-radius: 3px;
+}
+
+.save-helper {
+    position: relative;
+    text-align: left;
+}
+
+.save-helper .top {
+    min-width: 200px;
+    top: -20px;
+    left: -80%;
+    transform: translate(-70%, -100%);
+    padding: 10px 20px;
+    font-size: 13px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 99999999;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+.save-helper:hover .top {
+    visibility: visible;
+    opacity: 1;
+}
+
+.save-helper .top i {
+    position: absolute;
+    top: 100%;
+    left: 83%;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.save-helper .top i::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(42deg);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+p {
+    margin: 0;
+}
+
+.card-brand-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    margin-left: 20px;
+}
+
+#billingAddress {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.alternative-input {
+    opacity: .78;
+}
+
+/*  =========================  *
+*   Provider specific rules   *
+*  =========================  */
+
+.policy-checkbox {
+    padding-left: 0;
+}
+
+.policy-checkbox-label-text {
+    font-size: 13px;
+}
+
+.itan-image {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.flicker {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    background-color: #000;
+    border: 3px solid #000;
+    margin-bottom: 12px;
+}
+
+.bar {
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+    margin: 0px 2.5%;
+    background-color: #000;
+}
+
+.bar-white {
+    background-color: #fff !important;
+}
+
+.triangle-inner {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-color: #c0c0c0 transparent transparent;
+    position: relative;
+    top: 0px;
+    left: -50%;
+    border-width: 20px 10px 0px;
+}
+
+.triangle {
+    position: absolute;
+    top: 0px;
+    left: 10%;
+}
+
+/*Tabs*/
+.tabs {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    list-style: none;
+    margin: 0 auto 8px;
+}
+
+.tab-link {
+    background: none;
+    color: #222;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+.current {
+    color: white;
+    border-bottom: 1px solid white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card-message-text {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    color: #ffffff;
+}
+
+.message-top {
+    margin-bottom: 20px;
+}
+
+.message-bottom {
+    margin-top: 30px;
+}
+
+.list-item {
+    margin: 5px 0 5px 0;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+.submit-button {
+    width: 60%;
+    height: 51px;
+    left: 40.35%;
+    right: 40.39%;
+    border: none;
+    background: #54B146;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.card {
+    background-color: transparent;
+    border: none !important;
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.layout-container-footer {
+    background-color: #f8f8f8;
+    border: 1px solid #e7e7e7;
+}
+
+.text-amount {
+    color: #4CA835;
+    font-size: 30px;
+    margin-top: 8px;
+}
+
+.available-cards {
+    border: 2px solid #e5f0ff;
+    background-color: #f8f9fa;
+    color: #2159b9;
+}
+
+.available-card {
+    box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.17);
+    background-color: #ffffff;
+}
+
+.available-card:not(.selected-card):hover {
+    box-shadow: inset 0 1px 10px 0 #ffffff;
+    background-color: #ffffff;
+}
+
+.custom-btn {
+    color: #ffffff;
+}
+
+.saveTemplate:not(:checked) + .checkbox-label:before,
+.saveTemplate:checked + .checkbox-label:before {
+    background: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+    border: solid 2px rgba(37, 39, 60, 0.68);
+}
+
+.saveTemplate:not(:checked) + .checkbox-label:after,
+.saveTemplate:checked + .checkbox-label:after {
+    color: #80c54e;
+}
+
+.checkbox-label {
+    color: #23263c;
+}
+
+.card-text {
+    color: #26283c;
+}
+
+.card-text span {
+    color: #26283c;
+}
+
+.selected-card {
+    box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.17);
+    border: solid 2px #00e7ff;
+}
+
+.text-successful {
+    color: #50E3C2;
+}
+
+.text-declined {
+    color: #fd4d4d;
+}
+
+.text-default {
+    color: #2861c3;
+}
+
+.middle-block {
+    border: 2px solid #2156BB;
+}
+
+.logo-wrapper {
+    background: #DBEAFF;
+}
+
+.submit-button {
+    background: #54B146;
+    color: #FFFFFF;
+}
+
+.option-selector {
+    background: #E1E1E1;
+    color: #808080;
+}
+
+.select-label {
+    color: #000000;
+}
+
+.shop-title {
+    color: #2156BB;
+}
+
+.text-shop-title {
+    color: #23263c;
+}
+
+.add-new-card {
+    box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.17);
+    background-color: #ffffff;
+    color: #051141;
+}
+
+.pp-card-body-new {
+    background-color: #ffffff;
+}
+
+.selected-card-cvv {
+    border-left: 1px solid lightgray;
+}
+
+.selected-card-cvv-input {
+    color: #23263c;
+}
+
+.selected-card-cvv-input::placeholder {
+    color: #878787;
+}
+
+.background-white {
+    background-color: white;
+}
+
+.error-field {
+    border: 2px solid rgba(255, 51, 88, .7);
+}
+
+.save-helper .top {
+    background-color: #fffef1;
+    border: 1px solid #f1e9ca;
+    box-shadow: 0 1px 8px rgba(229, 209, 168, 0.19);
+    color: #7a562a;
+}
+
+.save-helper .top i::after {
+    background-color: #fffef1;
+    border: 1px solid #f1e9ca;
+    box-shadow: 0 1px 8px rgba(229, 209, 168, 0.19);
+}
+
+.alternative-input {
+    background-color: white;
+}
+
+.has-error {
+    border-color: red;
+}
+
+#cancelLink > svg > path {
+    fill: #051141;
+}
+
+.policy-checkbox-label-text > a {
+    color: #051141;
+}
+
+.form-title {
+    color: black;
+}
+
+/*  ===============  *
+*   MEDIA QUERIES   *
+*  ===============  */
+
+@media only screen and (max-width: 430px) {
+    .expiry::-webkit-input-placeholder,
+    .cvv::-webkit-input-placeholder {
+        font-size: 12px;
+    }
+
+    .expiry:-ms-input-placeholder,
+    .cvv:-ms-input-placeholder {
+        font-size: 12px;
+    }
+
+    .expiry::-ms-input-placeholder,
+    .cvv::-ms-input-placeholder {
+        font-size: 12px;
+    }
+
+    .expiry::placeholder,
+    .cvv::placeholder {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .card-text span {
+        display: none;
+    }
+}
+
+/*
+Mobile Screen = B/w 320px to 479px
+*/
+@media (max-width: 480px) {
+    .card {
+        margin-top: 0;
+    }
+
+    .left-field {
+        padding: 0;
+    }
+
+    .payment-form-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .col-md-12 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .pp-card {
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 0;
+    }
+
+    .pp-card-body {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+        justify-content: center;
+    }
+
+    .container {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .left-field {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .right-field {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .coins {
+        display: none;
+    }
+
+    .add-new-card svg {
+        left: 32px;
+    }
+}
